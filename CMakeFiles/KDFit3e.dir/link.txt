@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wl,-rpath,   CMakeFiles/KDFit3e.dir/Galaxy.cc.o CMakeFiles/KDFit3e.dir/GalaxyDB.cc.o CMakeFiles/KDFit3e.dir/CalcH.cc.o CMakeFiles/KDFit3e.dir/KDFit3e_prog.cc.o  -o KDFit3e  -L/ -rdynamic -lMinuit 

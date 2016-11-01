@@ -1,0 +1,247 @@
+# Galaxy List::Sofue  goes with Noah's updated code
+
+Label=MilkyWay Bulge=MW_Sofue_BULGE.txt Disc=MW_Sofue_DISK.txt
+
+#VV NGC6946_deBlok_LUM AT ORIGINAL DISTANCE 5.9 Mpc, NGC6946_deBlok_LUMdf changed to 6.9 Mpc, NGC6946_deBlok_LUM2df is for XueSofue
+Label=n6946bLCM Lum=NGC6946_deBlok_LUM2df.txt Data=NGC6946_deBlok_DATAdf.txt DataError=NGC6946_deBlok_ERRORdf.txt 
+
+#WW 
+Label=f563_1LCM Lum=F563-1_Navarro_LUM.txt Data=F563-1_Navarro_DATA.txt DataError=F563-1_Navarro_ERROR.txt
+
+#XX NGC3198_deBlok_LUM is XUE file. append 2 is XueSofue file’
+Label=n3198cLCM Lum=NGC3198_deBlok_LUM2.txt Data=NGC3198_deBlok_DATA.txt DataError=NGC3198_deBlok_ERROR.txt 
+
+#YY 
+Label=n7793TaMLCM  Lum=NGC7793_TaM_LUM5.txt Data=NGC7793_GentileTaM_DATA.txt DataError=NGC7793_GentileTaM_ERROR.txt 
+
+#ZZ LUM, LUM2, LUM3, LUM5 xue sofue, LUM 4 sofue
+Label=n2841TaMLCM Lum=NGC2841_TaM_LUM4.txt Data=NGC2841_TaM_DATA.txt DataError=NGC2841_TaM_ERROR.txt 
+ 
+#Z
+Label=n2403bLCM Lum=NGC2403_deBlok_LUM.txt Data=NGC2403_deBlok_DATA.txt DataError=NGC2403_deBlok_ERROR.txt 
+
+#Y not going to include for now, data too scattered to give good indication of our alpha relations
+Label=u11861LCM Lum=UGC11861_LUM2.txt Data=UGC11861_DATA.txt DataError=UGC11861_ERROR.txt  
+
+#X 
+Label=u8490LCM Lum=UGC8490_LUM.txt Data=UGC8490_DATA.txt DataError=UGC8490_ERROR.txt  
+
+#W NGC925_ISO_LUM is for Xue, XS is NGC925_ISO_LUM2
+Label=n925isoLCM Lum=NGC925_ISO_LUM5.txt Data=n925_ISO_DATA.txt DataError=n925_ISO_ERROR.txt  
+
+#V  NGC7793_DicaireISO_LUM is for Xue, SofXue is NGC7793_DicaireISO_LUM2.txt
+Label=n7793isoLCM Lum=NGC7793_DicaireISO_LUM2.txt Data=NGC7793_DicaireISO_DATA.txt DataError=NGC7793_DicaireISO_ERROR.txt
+
+#U LUM is for a4, LUM5 is for a47, LUM6 is for due sofue
+Label=m33LCM Lum=M33_Corbelli_LUM6.txt Data=M33_Corbelli_DATA.txt DataError=M33_Corbelli_ERROR.txt 
+
+#T
+Label=n3198bNFWLCM Lum=NGC3198_Navarro_LUM.txt Data=NGC3198_Navarro_DATA.txt DataError=NGC3198_Navarro_ERROR.txt 
+
+#S LUMsofia is for a4, NGC3726_McGaugh_LUM5df  Xue, Sof & SX: append 6df
+Label=n3726LCM Lum=NGC3726_McGaugh_LUM6df.txt Data=NGC3726_McGaugh_DATAdf.txt DataError=NGC3726_McGaugh_ERRORdf.txt 
+
+#R
+Label=n4088LCM Lum=NGC4088_Verheijen_LUMdf.txt Data=NGC4088_Verheijen_DATAdf.txt DataError=NGC4088_Verheijen_Errordf.txt 
+
+#Q
+Label=u6973LCM Lum=UGC6973_McGaugh_LUMdf.txt Data=UGC6973_McGaugh_DATAdf.txt DataError=UGC6973_McGaugh_ERRORdf.txt 
+
+
+#P LUM is for a4, LUM5 is for a4.7, LUM5 for Xue, LUM6 for XueSofue
+Label=n6946LCM Lum=NGC6946_McGaugh_LUM6df.txt Data=NGC6946_McGaugh_DATAdf.txt DataError=NGC6946_McGaugh_ERRORdf.txt 
+
+#O   
+Label=n3953LCM Lum=NGC3953_McGaugh_LUMdf.txt Data=NGC3953_McGaugh_DATAdf.txt DataError=NGC3953_McGaugh_ERRORdf.txt
+
+#N sofue and sofueXue same LUM6 file
+Label=n2903LCM Lum=NGC2903_McGaugh_LUM6.txt Data=NGC2903_McGaugh_DATA.txt DataError=NGC2903_McGaugh_ERROR.txt
+
+#M   
+Label=n5907LCM Lum=NGC5907_McGaugh_LUMdf.txt Data=NGC5907_McGaugh_DATAdf.txt DataError=NGC5907_McGaugh_ERRORdf.txt 
+
+#L  
+Label=n4138LCM Lum=NGC4138_McGaugh_LUM5df.txt Data=NGC4138_McGaugh_DATAdf.txt DataError=NGC4138_McGaugh_ERRORdf.txt 
+
+#K NGC5055_deBlok_LUM5 xue sofue, Xue LUM4
+Label=n5055LCM Lum=NGC5055_deBlok_LUM5.txt Data=NGC5055_deBlok_DATAdf.txt DataError=NGC5055_deBlok_ERRORdf.txt 
+
+#J  LUM3 is XueSof, and Sofue
+Label=n7331LCM Lum=NGC7331_James_LUM3.txt Data=NGC7331_James_DATA.txt DataError=NGC7331_James_ERROR.txt 
+	
+#I 
+Label=n891LCM Lum=n891max_Fraternalli_LUMedits.txt Data=NGC891_FraternaliwX_DATA.txt DataError=NGC891_FraternaliwX_ERROR.txt
+#Data=DM_NGC891.txt DataError=error_NGC891.txt
+
+#H   NGC7814iso_Fraternalli_LUM5 xue, NGC7814iso_Fraternalli_LUM6 xuesofue
+Label=n7814isoLCM Lum=NGC7814iso_Fraternalli_LUM6.txt Data=DM_NGC7814.txt DataError=ERRORS_NGC7814.txt 
+
+#G  
+Label=n5533LCM Lum=NGC5533_McGaugh_LUM5.txt Data=NGC5533_McGaugh_DATA.txt DataError=NGC5533_McGaugh_ERROR.txt 
+
+#F  James’ dwarf gals from MNRAS 2012, NGC2841_James_LUM.txt xueSofue, NGC2841_James_LUM2.txt sofue
+Label=n2841LCM LUM=NGC2841_James_LUM.txt Data=NGC2841_James_DATA.txt DataError=NGC2841_James_ERROR.txt 
+
+#E this test one: M31_Carig_LUM2 this the good good M31_Carignan_LCMsofia
+Label=m31LCM Lum=M31_Carignan_LCMsofia.txt Data=M31_Carignan_DATA.txt DataError=M31_Carignan_ERROR.txt 
+
+#D  x-nay this galaxy. bad data
+Label=m31LCMklyp Lum=m31_Klypin_sofiaLUM2.txt Data=M31_Klypin_DATA.txt DataError=M31_Klypin_ERROR.txt 
+
+#C LUM3 is test file   LUM4 is Xue, Sofue and SofueXue
+Label=u128LCM Lum=UGC128_James_LUM4.txt Data=UGC128_James_DATA.txt DataError=UGC128_James_ERROR.txt 
+
+#B LUM and LUMedits (run 4), LUM5 is for run 47
+Label=u7524LCM LUM=UGC7524_James_LUM5.txt Data=UGC7524_James_DATA.txt DataError=UGC7524_James_ERROR.txt 
+
+#A    
+Label=n3992v2LCM LUM=n3992_LUM.txt Data=NGC3992_BottemaVerj_DATA.txt DataError=NGC3992_BottemaVerj_ERROR.txt 
+
+#A.0  works for a4: NGC3992_McGaugh_LUMdf
+Label=n3992LCM Lum=NGC3992_McGaugh_LUM2.txt Data=NGC3992_McGaugh_DATAdf.txt DataError=NGC3992_McGaugh_ERRORdf.txt 
+
+#Z   LUM2 for XUE and Xue/Sofue, LUM3 for Sofue
+Label=n3521LCM Lum=NGC3521_James_LUM2.txt Data=NGC3521_JAMES_DATA.txt DataError=NGC3521_JAMES_ERROR.txt 
+
+#Y Bulge=NGC3992_BottemaVerj_BULGEv2.txt Disc=NGC3992_BottemaVerj_DISKv2.txt #Gas=NGC3992_BottemaVerj_GAS.txt Data=NGC3992_BottemaVerj_DATA.txt #DataError=NGC3992_BottemaVerj_ERROR.txt 
+Label=n3992v2 Bulge=NGC3992_BottemaVerj_BULGEv2df.txt Disc=NGC3992_BottemaVerj_DISKv2df.txt Gas=NGC3992_BottemaVerj_GASdf.txt Data=NGC3992_BottemaVerj_DATAdf.txt DataError=NGC3992_BottemaVerj_ERRORdf.txt 
+
+#-1  NFW_m33 corbelli Out=M33_8_15xue.txt
+Label=m33 Disc=M33_Corbelli_DISK.txt Gas=M33_Corbelli_GAS.txt Data=M33_Corbelli_DATA.txt DataError=M33_Corbelli_ERROR.txt 
+ 
+#0  NFW_m33 salucci Out=M33_8_15xue.txt
+Label=m33bNFW Disc=M33_Salucci_DISK.txt Gas=M33_Salucci_GAS.txt Data=M33_Salucci_DATA.txt DataError=M33_Salucci_ERROR.txt 
+
+#1 Out=NGC3198aNFWxue.txt
+Label=n3198aNFW Disc=disk_NGC3198.txt Gas=gas_NGC3198.txt Data=dmData_NGC3198.txt DataError=errors_NGC3198.txt 
+
+#2  
+Label=n891 Bulge=bulge_NGC891.txt Disc=Disk_NGC891.txt Gas=Gas_NGC891.txt Data=DM_NGC891.txt DataError=error_NGC891.txt
+
+#2.25
+Label=n891MOND Bulge=NGC891_Fraternali_MOND_BULGE.txt Disc=NGC891_Fraternali_MOND_DISK.txt Gas=NGC891_Fraternali_MOND_GAS.txt Data=NGC891_Fraternali_MOND_DATA.txt DataError=NGC891_Fraternali_MOND_ERROR.txt
+
+#2.5  
+Label=n891ISO Bulge=NGC891_FRAT_ISO_BULGE.txt Disc=NGC891_FRAT_ISO_DISK.txt Gas=NGC891_FRAT_ISO_GAS.txt Data=NGC891_FRAT_ISO_DATA.txt DataError=NGC891_FRAT_ISO_ERROR.txt
+
+#2.75
+Label=n891a Bulge=NGC891_FraternaliwX_BULGE.txt Disc=NGC891_FraternaliwX_DISKS.txt Gas=NGC891_FraternaliwX_GAS.txt Data=NGC891_FraternaliwX_DATA.txt DataError=NGC891_FraternaliwX_ERROR.txt
+
+#3 Out=M31xue.txt  
+Label=m31 Bulge=M31_Carignan_BULGE.txt Disc=M31_Carignan_DISK.txt Gas=M31_Carignan_GAS.txt Data=M31_Carignan_DATA.txt DataError=M31_Carignan_ERROR.txt 
+
+#3.5 Out=M31KLYPINxue.txt Bulge=M31_Klypin_BULGE.txt Disc=M31_Klypin_DISK.txt  m31_Klypin_sofiaLUM
+Label=m31klyp  Lum=M31_Klypin_LUM.txt Data= M31_Klypin_DATA.txt DataError=M31_Klypin_ERROR.txt 
+
+#4    
+Label=n7814ISO Bulge=BULGE_NGC7814.txt Disc=DISK_NGC7814.txt Gas=GAS_NGC7814.txt Data=DM_NGC7814.txt DataError=ERRORS_NGC7814.txt 
+
+#4.5   
+Label=n7814  Bulge=NGC7814_Fraternali_BULGE.txt Disc=NGC7814_Fraternali_DISK.txt Gas=NGC7814_Fraternali_GAS.txt Data=NGC7814_Fraternali_WoDM_DATA.txt DataError=NGC7814_Fraternali_WoDM_ERROR.txt 
+
+#5 Out=NGC2403MONDxue.txt
+Label=n2403MOND Disc=NGC2403_Bottema_DISK.txt Gas=NGC2403_Bottema_GAS.txt Data=NGC2403_Bottema_DATA.txt DataError=NGC2403_Bottema_ERROR.txt 
+
+#6
+Label=n2841MOND Bulge=NGC2841_Bottema_BULGE.txt Disc=NGC2841_Bottema_DISK.txt Gas=NGC2841_Bottema_GAS.txt Data=NGC2841_Bottema_DATA.txt DataError=NGC2841_Bottema_ERROR.txt 
+
+#7  Old at distance 15.5Mpc:Disc=NGC4088_Verheijen_DISK.txt Gas=NGC4088_Verheijen_GAS.txt #Data=NGC4088_Verheijen_DATA.txt DataError=NGC4088_Verheijen_Error.txt 
+Label=n4088 Disc=NGC4088_Verheijen_DISKdf.txt Gas=NGC4088_Verheijen_GASdf.txt Data=NGC4088_Verheijen_DATAdf.txt DataError=NGC4088_Verheijen_Errordf.txt 
+
+#8  from 10.1 to 6.9
+Label=n6946 Disc=NGC6946_McGaugh_DISKdf.txt Gas=NGC6946_McGaugh_GASdf.txt Data=NGC6946_McGaugh_DATAdf.txt DataError=NGC6946_McGaugh_ERRORdf.txt 
+
+#9 MOND_N2903
+Label=n2903 Disc=NGC2903_McGaugh_DISK.txt Gas=NGC2903_McGaugh_GAS.txt Data=NGC2903_McGaugh_DATA.txt DataError=NGC2903_McGaugh_ERROR.txt
+
+#10   at old distance of 15.5 Mpc:Disc=NGC3953_McGaugh_DISK.txt #Gas=NGC3953_McGaugh_GAS.txt Data=NGC3953_McGaugh_DATA.txt #DataError=NGC3953_McGaugh_ERROR.txt
+Label=n3953 Disc=NGC3953_McGaugh_DISKdf.txt Gas=NGC3953_McGaugh_GASdf.txt Data=NGC3953_McGaugh_DATAdf.txt DataError=NGC3953_McGaugh_ERRORdf.txt
+
+#11   original at old distances:  Disc=NGC3726_McGaugh_DISK.txt etc.
+Label=n3726 Disc=NGC3726_McGaugh_DISKdf.txt Gas=NGC3726_McGaugh_GASdf.txt Data=NGC3726_McGaugh_DATAdf.txt DataError=NGC3726_McGaugh_ERRORdf.txt 
+
+#12  
+Label=n3992 Disc=NGC3992_McGaugh_DISKdf.txt Gas=NGC3992_McGaugh_GASdf.txt Data=NGC3992_McGaugh_DATAdf.txt DataError=NGC3992_McGaugh_ERRORdf.txt 
+
+
+#13  old distance data: Disc=NGC4138_McGaugh_DISK.txt Gas=NGC4138_McGaugh_GAS.txt #Data=NGC4138_McGaugh_DATA.txt DataError=NGC4138_McGaugh_ERROR.txt 
+Label=n4138 Disc=NGC4138_McGaugh_DISKdf.txt Gas=NGC4138_McGaugh_GASdf.txt Data=NGC4138_McGaugh_DATAdf.txt DataError=NGC4138_McGaugh_ERRORdf.txt 
+
+#14 Old distance: Disc=UGC6973_McGaugh_DISK.txt Gas=UGC6973_McGaugh_GAS.txt #Data=UGC6973_McGaugh_DATA.txt DataError=UGC6973_McGaugh_ERROR.txt 
+Label=u6973 Disc=UGC6973_McGaugh_DISKdf.txt Gas=UGC6973_McGaugh_GASdf.txt Data=UGC6973_McGaugh_DATAdf.txt DataError=UGC6973_McGaugh_ERRORdf.txt 
+
+#15  Out=NGC5055batt2xue.txt
+Label=n5055batt2   Disc=N5055_disk_batt2.txt Gas=N5055_gas_batt2.txt Data=N5055_data_batt2.txt DataError=N5055_error_batt2.txt
+#N5055_errors_batt2.txt
+
+#16 Out=NGC7331MONDxue.txt   NGC7331_Bottema_ERROR.txt 
+Label=n7331MOND Bulge=NGC7331_Bottema_BULGE.txt Gas=NGC7331_Bottema_GAS.txt Disc=NGC7331_Bottema_DISK.txt Data=NGC7331_Bottema_DATA.txt DataError=NGC7331_Bottema_ERROR.txt 
+
+#17  Out=NGC5533xue.txt
+Label=n5533 Bulge=NGC5533_McGaugh_BULGE.txt Gas=NGC5533_McGaugh_GAS.txt Disc=NGC5533_McGaugh_DISK.txt Data=NGC5533_McGaugh_DATA.txt DataError=NGC5533_McGaugh_ERROR.txt 
+
+#18   at old distance of 15.5 Mpc Bulge=NGC5907_McGaugh_BULGE.txt #Gas=NGC5907_McGaugh_GAS.txt Disc=NGC5907_McGaugh_DISK.txt Data=NGC5907_McGaugh_DATA.txt ##DataError=NGC5907_McGaugh_ERROR.txt 
+Label=n5907 Bulge=NGC5907_McGaugh_BULGEdf.txt Gas=NGC5907_McGaugh_GASdf.txt Disc=NGC5907_McGaugh_DISKdf.txt Data=NGC5907_McGaugh_DATAdf.txt DataError=NGC5907_McGaugh_ERRORdf.txt 
+
+#19 Navarro
+Label=n3198bNFW Gas=NGC3198_Navarro_GAS.txt Disc=NGC3198_Navarro_DISK.txt Data=NGC3198_Navarro_DATA.txt DataError=NGC3198_Navarro_ERROR.txt 
+
+#21 
+Label=f563_1NFW Gas=F563-1_Navarro_GAS.txt Disc=F563-1_Navarro_DISK.txt Data=F563-1_Navarro_DATA.txt DataError=F563-1_Navarro_ERROR.txt
+
+#21.5 
+Label=f563_1bNFW Gas=F563-1_McGaugh_GAS.txt Disc=F563-1_McGaugh_DISK.txt Data=F563-1_McGaugh_DATA.txt DataError=F563-1_McGaugh_ERROR.txt
+
+#22   
+Label=n925NFW Gas=GAS_N925.txt Disc=DISK_N925.txt Data=DATA_N925.txt DataError=ERROR_N925.txt 
+
+#22.5 
+Label=n925ISO Gas=n925_ISO_GAS.txt Disc=n925_ISO_DISK.txt Data=n925_ISO_DATA.txt DataError=n925_ISO_ERROR.txt  
+
+#23 
+Label=n2403bNFW	 Gas=NGC2403_deBlok_GAS.txt Disc=NGC2403_deBlok_DISK.txt Data=NGC2403_deBlok_DATA.txt DataError=NGC2403_deBlok_ERROR.txt 
+
+#24 
+Label=n3198cNFW Gas=NGC3198_deBlok_GAS.txt Disc=NGC3198_deBlok_DISK2.txt Data=NGC3198_deBlok_DATA.txt DataError=NGC3198_deBlok_ERROR.txt 
+
+#25 rescaled from de Blok’s 10.1 to James 6.9 Mpc.Bulge=NGC6946_deBlok_INNERDISK.txt #Gas=NGC6946_deBlok_GAS.txt Disc=NGC6946_deBlok_DISK.txt Data=NGC6946_deBlok_DATA.txt #DataError=NGC6946_deBlok_ERROR.txt 
+Label=n6946bNFW Bulge=NGC6946_deBlok_INNERDISKdf.txt Gas=NGC6946_deBlok_GASdf.txt Disc=NGC6946_deBlok_DISKdf.txt Data=NGC6946_deBlok_DATAdf.txt DataError=NGC6946_deBlok_ERRORdf.txt 
+
+#26 
+Label=n2903bNFW Bulge=NGC2903_deBlok_INNERDISK.txt Gas=NGC2903_deBlok_GAS.txt Disc=NGC2903_deBlok_DISK.txt Data=NGC2903_deBlok_DATA_truncated.txt DataError=NGC2903_deBlok_ERROR_truncated.txt
+
+#27 
+Label=n2841bNFW Bulge=NGC2841_deBlok_BULGE.txt Gas=NGC2841_deBlok_GAS.txt Disc=NGC2841_deBlok_DISK.txt Data=NGC2841_deBlok_DATA.txt DataError=NGC2841_deBlok_ERROR.txt 
+
+#28  re-scaling de Blok’s distance of 10.1 to James’ 9.2, changing scale by factor of #0.91089m Bulge=NGC5055_deBlok_BULGE.txt Gas=NGC5055_deBlok_GAS.txt #Disc=NGC5055_deBlok_DISK.txt Data=NGC5055_deBlok_DATA.txt #DataError=NGC5055_deBlok_ERROR.txt
+Label=n5055dNFW Bulge=NGC5055_deBlok_BULGEdf.txt Gas=NGC5055_deBlok_GASdf.txt Disc=NGC5055_deBlok_DISKdf.txt Data=NGC5055_deBlok_DATAdf.txt DataError=NGC5055_deBlok_ERRORdf.txt 
+
+#29
+Label=n2841TaM Bulge=NGC2841_TaM_BULGE.txt Gas=NGC2841_TaM_GAS.txt Disc=NGC2841_TaM_DISK.txt Data=NGC2841_TaM_DATA.txt DataError=NGC2841_TaM_ERROR.txt 
+ 
+#30 
+Label=n2903TaM Gas=NGC2903_Gentile(TaM)_GAS.txt Disc=NGC2903_Gentile(TaM)_DISK.txt Data=NGC2903_Gentile(TaM)_DATA.txt DataError=NGC2903_Gentile(TaM)_ERROR.txt 
+
+#31 
+Label=n7331TaM Bulge=BULGE_N7331_TaM.txt Gas=GAS_N7331_TaM.txt Disc=DISK_N7331_TaM.txt Data=DATA_N7331_TaM.txt DataError=ERROR_N7331_TaM.txt 
+
+#32 
+Label=n3521TaM Gas=NGC3521_Gentile_GAS.txt Disc=NGC3521_Gentile_DISK.txt Data=NGC3521_Gentile_DATA.txt DataError=NGC3521_Gentile_ERROR.txt  
+
+#33 
+Label=n7793TaM  Gas=NGC7793_GentileTaM_GAS.txt Disc=NGC7793_GentileTaM_DISK.txt Data=NGC7793_GentileTaM_DATA.txt DataError=NGC7793_GentileTaM_ERROR.txt 
+
+#33.5   
+Label=n7793ISO  Gas=NGC7793_DicaireISO_GAS.txt Disc=NGC7793_DicaireISO_DISK.txt Data=NGC7793_DicaireISO_DATA.txt DataError=NGC7793_DicaireISO_ERROR.txt
+
+#34 
+Label=n5055TaM Bulge=BULGE_N5055_TaM.txt Gas=GAS_N5055_TaM.txt Disc=DISK_N5055_TaM.txt Data=DATA_N5055_TaM.txt DataError=ERROR_N5055_TaM.txt 
+
+#35  
+Label=n3198dMOND Gas=NGC3198_GentileMaria_GAS.txt Disc=NGC3198_GentileMaria_DISK.txt Data=NGC3198_GentileMaria_DATA.txt DataError=NGC3198_GentileMaria_ERROR.txt 
+
+#35.5  hybrid, to see if we can use JNav's lum profile on Gen/Maria's data: Lum=LUM_JNav.txt Out=NGC3198hybxue.txt
+Label=n3198hyb  Gas=NGC3198_GentileMaria_GAS.txt Disc=Stars_JNavSubtractGenTgas.txt  Data=NGC3198_GentileMaria_DATA.txt DataError=NGC3198_GentileMaria_ERROR.txt 
+
+#36 
+Label=n2915MOND Gas=NGC2915_San96_GAS.txt Disc=NGC2915_San96_DISK.txt Data=NGC2915_San96_DATA.txt DataError=NGC2915_San96_ERROR.txt 
