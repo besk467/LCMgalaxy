@@ -5,7 +5,9 @@ project (Galaxy)
 # global property to hold the names of katydid library targets
 set_property (GLOBAL PROPERTY ${PROJECT_NAME}_LIBRARIES)
 
-include_directories(/usr/local/installed_packages/root/lib)
+execute_process(COMMAND root-config --incdir OUTPUT_VARIABLE ROOTINC)
+
+include_directories(${ROOTINC})
 
 # deal with the rpath settings (from http://www.cmake.org/Wiki/CMake_RPATH_handling)
 # use (i.e. don't skip) the full RPATH for the build tree
@@ -41,7 +43,7 @@ include_directories (${ROOT_INCLUDES})
 #libMinuit doesn't get included in ROOT_LIBRARIES for some reason
 set( ROOT_LIBRARIES ${ROOT_LIBRARIES} ${ROOT_LIBRARY_DIR}/libMinuit.so)
 
-set( CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -Wl,-rpath,${ROOT_LIBRARY_DIR} )
+set( CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -std=c++11 )
 
 set (HEADER_FILES
     Galaxy.hh

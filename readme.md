@@ -11,4 +11,13 @@ PLEASE be sure to branch off the mmaster before you start making changes.
 
 side-note - TMinuit.h (sp?) doesn't appear to be in 6.08 [version I'm using]
 
+TMinuit.h is there, but the old cmake settings aren't finding it properly.  You should be all set now.  Run
+
+```
+cmake build/
+make
+```
+
+That should do it
+
 
