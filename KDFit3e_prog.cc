@@ -4,6 +4,8 @@
 // Be forwarned: without errors on the data (which were not provided),
 // the error bars on the fit values are basically meaningless
 
+// ./KDFit3e n891LCM  xxxxxxxxx.db <target>
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>

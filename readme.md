@@ -20,4 +20,16 @@ make
 
 That should do it
 
+ADDENDUM:
+If you get an error regarding failure to load "libCore.so", then your environment variable is not pointing to the newly installed ROOT on your system.
+
+to do so in ubuntu - 
+
+[ ] sudo vim /etc/ld.so.conf.d/<pickaname>.conf
+    in the file, write the direct path to the lib "/home/linux/lib"
+
+if you don't know where it is, navigate to home and do a search for libCore.so => find name "libCore.so"
+
+cheers!
+
 

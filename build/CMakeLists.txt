@@ -34,7 +34,7 @@ set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
 
 include_directories (${PROJECT_SOURCE_DIR})
 
-find_package (ROOT 5.28)
+find_package (ROOT 6.09)
 if (NOT ROOT_FOUND)
     message (FATAL "ROOT not found")
 endif (NOT ROOT_FOUND)

@@ -69,7 +69,7 @@ Label=n5055LCM Lum=NGC5055_deBlok_LUM5.txt Data=NGC5055_deBlok_DATAdf.txt DataEr
 #J  LUM3 is XueSof, and Sofue
 Label=n7331LCM Lum=NGC7331_James_LUM3.txt Data=NGC7331_James_DATA.txt DataError=NGC7331_James_ERROR.txt 
 	
-#I 
+#I  //fit the disk onte fly, accept the bulge, varie the disc.
 Label=n891LCM Lum=n891max_Fraternalli_LUMedits.txt Data=NGC891_FraternaliwX_DATA.txt DataError=NGC891_FraternaliwX_ERROR.txt
 #Data=DM_NGC891.txt DataError=error_NGC891.txt
 

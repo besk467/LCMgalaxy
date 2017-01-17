@@ -1,0 +1,3 @@
+/home/groot/code-dojo/cpp/LCM/CMakeFiles/edit_cache.dir
+/home/groot/code-dojo/cpp/LCM/CMakeFiles/rebuild_cache.dir
+/home/groot/code-dojo/cpp/LCM/CMakeFiles/KDFit3e.dir
