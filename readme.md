@@ -20,6 +20,14 @@ make
 
 That should do it
 
+# Configuration Management Action Items
+
+[ ] pull most recent modifications to CalcH.cc
+[ ] provide an image to publicly accessible domain - containing installations of all software prereqs and instructions for branching from master
+[ ] investigate the validity and performance/accuracy deltas migrating codebase to GSL.
+[ ] refactor codebase for modularity *heavy-duty action-item*
+
+
 ADDENDUM:
 If you get an error regarding failure to load "libCore.so", then your environment variable is not pointing to the newly installed ROOT on your system.
 
