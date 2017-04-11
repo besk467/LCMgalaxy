@@ -445,9 +445,10 @@ void CalcH::calculate_vLCM()
 	for (int i=0; i<(int)data.size(); i++)
 	{
         int galaxy_i = galaxy_index(i);
-        //GIVES RIGHT VALUES:kappa(i) = other->deltac(i) / milky->deltac(i);
+        //DOES NOT GIVE RIGHT VALUES:kappa(i) ne other->deltac(i) / milky->deltac(i);
         kappa(i) = other->deltac(galIndices[galaxy_i].other) / milky->deltac(galIndices[galaxy_i].mw);
-       cout <<other->r(i)<< "   "<<kappa(i)<<"   "<<kappa_f()<< endl;
+       cout <<milky->r(i)<< "   "<<milky->vlum(i)<<"   "<<kappa_f()<< endl;
+       //kappa(i)<<"   "<<kappa_f()<< endl;
          //cout << "deltaC(MW, other)" << i<<"  " <<c*(1.-1./milky->n(i))<<  "  " <<c*(1.-1./other->n(i))<<endl;
     }
     
@@ -458,35 +459,32 @@ void CalcH::calculate_vLCM()
 	{
         int mw_i = galIndices[galaxy_index(i)].mw;
         int other_i = galIndices[galaxy_index(i)].other;
-        //alpha4
-   // vLCM(i) = c*c*(((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i))))*((((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))+((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i))))/(((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))-1/((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))))*(((other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))-(0.5)*(other->phi_f()-milky->phi_f()))/(2.0+(other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))+(0.5)*(other->phi_f()-milky->phi_f())))*((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))*(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))));
-    //TEST
-  vLCM(i) = c*c*(kappa(i))*((kappa(i)+1/kappa(i))/(kappa(i)-1/kappa(i)))*(((other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))-(0.5)*(other->phi_f()-milky->phi_f()))/(2.0+(other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))+(0.5)*(other->phi_f()-milky->phi_f())))*((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))*(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))));  
-//LCM FUNCTION TERMS:
-//  kappa(i)
-//((kappa(i)+kappa(i))/(kappa(i)-1/kappa(i)))* transformation of the two galaxy potential wells coth(xi)
-//(((other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))-(0.5)*(other->phi_f()-milky->phi_f()))/(2.0+(other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))+(0.5)*(other->phi_f()-milky->phi_f()))) potentially this is scalings of both v1 and v2, need to check bc otherwise there aint a v2 scaling in here,  v2 scaling SHOULD BE: but not in reciprocal, meaning ((other->phi_f()-milky->phi_f())/(2-other->phi_f()-milky->phi_f()))* works ok, but severely underpins the observed LUM  
-//((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*THIS TERM IS THE REAL KAPPA, but it  don't  give same kappa(i) result 
-//v1=(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))   
-//v2=(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))))
-//ALGEBRA:
-//v_1 scaling tilde(v_1)= (((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))-((1.-0.5*(other->phi_f()+milky->phi_f()))))/((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))+(1.-0.5*(other->phi_f()+milky->phi_f()))))
-//v_2=(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))))
-//v_2 scaling tilde(v_2) should equal *((2-(milky->phi_f()+other->phi_f()))/(other->phi_f()-milky->phi_f())
-// but that doesnt work, actually, only works if reciprocal of that, which means it's actually being multiplied..ugg
-//*((other->phi_f()-milky->phi_f())/(2-(milky->phi_f()+other->phi_f())) but even that don't work that good bc makes LUM too low
-//the anomalous thing  ((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))
-//v_1 scaling:*(((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))-((1.-0.5*(other->phi_f()+milky->phi_f()))))/((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))+(1.-0.5*(other->phi_f()+milky->phi_f())))) 
-//TEST:
-    //   vLCM(i) = c*c*kappa(i)*((kappa(i)+1/kappa(i))/(kappa(i)-1/kappa(i)))*(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))*(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))))*(((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))-((1.-0.5*(other->phi_f()+milky->phi_f()))))/((sqrt((1.+other->vlum_f()*overc)/(1.-other->vlum_f()*overc)))+(1.-0.5*(other->phi_f()+milky->phi_f()))))*((other->phi_f()-milky->phi_f())/(2-(milky->phi_f()+other->phi_f())));
-        //ALPHA4.7
-//	vLCM(i) = c*c*kappa(i)*(0.6062/(kappa_f()))*(0.6062/kappa_f())*(0.6062/kappa_f())*((kappa(i)+1/kappa(i))/(kappa(i)-1/kappa(i)))*(((other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))-(0.5)*(other->phi_f()-milky->phi_f()))/(2.0+(other->vlum_f()/c)+(0.5)*((other->vlum_f()/c)*(other->vlum_f()/c))+(0.5)*(other->phi_f()-milky->phi_f())))*((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))*(((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))));
-       // cout <<other->r(other_i)<< "   "<<other->vlum(other_i)<< endl;
-	cout <<other->r(other_i) <<  "  "  <<((1.-1./other->n(i))/(1.-1./milky->n(i)))<<  "  "  << kappa(i)<< "  "  <<other->deltac(i) / milky->deltac(i)<<endl;
-  //(other->phi(i)/milky->phi(i)) <<endl;
-        //
+        //LCM error func (v_gal/gal)
+	//This is the current version as of 2017/2/11
+	//vLCM(i) =c*c*((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))*(((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))))*((2/(other->n(other_i)/milky->n(mw_i)+milky->n(mw_i)/other->n(other_i)))-1);
+	//rott - 2017/2/11 - refactoring to be more readable and stable
+	//first, define w = n - 1   for computational stability
+	//Note that the final value can differ from the vLCM(i) above by
+	//about one part in 10000, this is because the new f_i is more
+	//numerically stable
+	double w_gal = other->n(other_i) - 1;
+	double w_mw = milky->n(mw_i) - 1;
+	double kappa_i = (w_gal/w_mw) * (w_mw + 1) / (w_gal + 1);
+	double a_i = kappa_i * kappa_i;
+	//d_i may still have problems, need to investigate more
+	double d_i = (((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))+(other->n(other_i)/milky->n(mw_i)))/((sqrt((1.+other->vlum(other_i)*overc)/(1.-other->vlum(other_i)*overc)))-(other->n(other_i)/milky->n(mw_i))));
+	double f_i = -(w_gal - w_mw)*(w_gal - w_mw) / ((w_gal+1)*(w_gal+1) + (w_mw+1)*(w_mw+1));
+	double vLCM_new = c*c*a_i*d_i*f_i;
+
+        //remember: these guys must be calling the correct galaxy index or they mismatch.
+ // (((other->n(other_i)/milky->n(mw_i)) - 1./(other->n(other_i)/milky->n(mw_i)))/((other->n(other_i)/milky->n(mw_i)) + 1./(other->n(other_i)/milky->n(mw_i))));
+     cout <<other->r(other_i)<< "   "<<other->vlum(other_i)<< endl;
+	//cout <<other->r(other_i) <<  "  "  <<milky->vlum(mw_i) <<endl;
+  //((1.-1./other->n(other_i))/(1.-1./milky->n(mw_i)))<<  "  "  << kappa(i)<< "  "  
+//	cout <<other->deltac(other_i) / milky->deltac(mw_i)<< "  "  <<kappa_f();
+  //(other->phi(other_i)/milky->phi(mw_i)) <<endl;
+
 	}
-    //cout << " " <<r(i)<< " " << other->vlum(other_i)<<endl;
     //Print(&CalcH::vLCM);
     //Print(&Galaxy::vlum);
 	//cout << "Successfully calculated for vLCM" << endl;
