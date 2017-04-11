@@ -4,8 +4,6 @@
 // Be forwarned: without errors on the data (which were not provided),
 // the error bars on the fit values are basically meaningless
 
-// ./KDFit3e n891LCM  xxxxxxxxx.db <target>
-
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -188,8 +186,8 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
             minuit.DefineParameter(i, calcH.get_other()->get_component_label(i).c_str(), 1., 0.01, 0.000000000001, 5.0);
         }
     }
-  minuit.DefineParameter(ncomp, "alpha", 1.00, 0.0001, 0.0000, 0.0000);
-   //minuit.DefineParameter(ncomp, "alpha", 0.08, 0.0001, 0.900, 01.100);
+ minuit.DefineParameter(ncomp, "alpha", 1.00, 0.0001, 0.0000, 0.0000);
+ //  minuit.DefineParameter(ncomp, "alpha", 0.08, 0.0001, 0.7100, 0.9000);
     //minuit.FixParameter(ncomp);
     // Fix parameter beta
    
@@ -202,6 +200,8 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
     // Get results out for plots, etc
     
     calcH.Print(&CalcH::kappa);
+    //calcH.Print(&CalcH::DeltaC);
+    
 
     double* outpar = new double[npar];
     double* outparerr = new double[npar];
@@ -230,12 +230,13 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
 
     //Compute chi2
     Double_t chi2 = 0;
-    Double_t vSum, diff;
+    Double_t ldm, vSum, diff;
     for (int i=0; i<nEntries; i++)
     {
         int galaxy_i = g_calcH->galaxy_index(i);
         int other_i = g_calcH->get_galIndices()[galaxy_i].other;
         vSum = g_calcH->get_other()->vlum(other_i) * g_calcH->get_other()->vlum(other_i) + alpha * g_calcH->vLCM(i);
+        ldm = alpha * g_calcH->vLCM(i);
         diff = sqrt(vSum) - g_calcH->data_v(i);
         chi2 += diff * diff / (calcH.data_vError(i)  *calcH.data_vError(i));
     }
@@ -279,11 +280,14 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
     TGraphErrors* dataGraph = new TGraphErrors(nEntries);
     TGraph* modelGraph = new TGraph(nEntries);
     TGraph* vlumGraph = new TGraph(nEntries);
+    TGraph* ldmGraph = new TGraph(nEntries);
     for (int i=0; i<nEntries; i++)
     {
         int galaxy_i = g_calcH->galaxy_index(i);
         int other_i = g_calcH->get_galIndices()[galaxy_i].other;
         vSum = g_calcH->get_other()->vlum(other_i) * g_calcH->get_other()->vlum(other_i) + alpha * g_calcH->vLCM(i);
+        ldm =  alpha * g_calcH->vLCM(i);
+        ldmGraph->SetPoint(i, calcH.r(i), sqrt(ldm));
         modelGraph->SetPoint(i, calcH.r(i), sqrt(vSum));
         vlumGraph->SetPoint(i, calcH.r(i), calcH.get_other()->vlum(other_i));
         dataGraph->SetPoint(i, calcH.data_r(i), calcH.data_v(i));
@@ -292,59 +296,77 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
         	dataGraph->SetPointError(i, 0., calcH.data_vError(i));
         }
     }
-
+    /*ldmGraph->SetLineColor(kBlue);
+    ldmGraph->SetLineStyle(4);
+    ldmGraph->SetLineWidth(2);
+    ldmGraph->SetFillColor(kWhite);
+    
+    
     modelGraph->SetLineColor(kRed);
     modelGraph->SetLineStyle(5);
     modelGraph->SetLineWidth(3);
-    //modelGraph->SetMarkerColor(kRed);
-    //modelGraph->SetMarkerStyle(31);
-    //modelGraph->SetMarkerSize(0.602);
     modelGraph->SetFillColor(kWhite);
-    //modelGraph->SetTitle(infile.c_str());
-    //modelGraph.GetXaxis()->SetTitle("Radius (kpc)");
-    //modelGraph->GetYaxis()->SetTitle("Velocity");
-    //modelGraph->Draw("APL");
 
     vlumGraph->SetLineColor(kBlack);
     vlumGraph->SetLineStyle(3);
     vlumGraph->SetLineWidth(3);
-    //vlumGraph->SetMarkerColor(kBlue);
-    //vlumGraph->SetMarkerStyle(15);
-    //vlumGraph->SetMarkerSize(0.602);
-    //vlumGraph->SetFillColor(kWhite);
-    //vlumGraph->Draw("PL");
+    
 
     dataGraph->SetLineColor(kBlack);
     dataGraph->SetLineStyle(9);
     dataGraph->SetMarkerColor(kBlack);
     dataGraph->SetMarkerStyle(24);
     dataGraph->SetMarkerSize(0.602);
-    dataGraph->SetFillColor(kWhite);
-    //dataGraph->Draw("PL");
+    dataGraph->SetFillColor(kWhite);*/
+     //This is for the Black and white pix for journal's print copy
+    ldmGraph->SetLineColor(kBlack);
+    ldmGraph->SetLineStyle(4);
+    ldmGraph->SetLineWidth(2);
+    ldmGraph->SetFillColor(kWhite);
     
-    // figure out dimensions
+    
+    modelGraph->SetLineColor(kBlack);
+    modelGraph->SetLineStyle(5);
+    modelGraph->SetLineWidth(3);
+    modelGraph->SetFillColor(kWhite);
+    
+    vlumGraph->SetLineColor(kBlack);
+    vlumGraph->SetLineStyle(3);
+    vlumGraph->SetLineWidth(3);
+    
+    
+    dataGraph->SetLineColor(kBlack);
+    dataGraph->SetLineStyle(9);
+    dataGraph->SetMarkerColor(kBlack);
+    dataGraph->SetMarkerStyle(24);
+    dataGraph->SetMarkerSize(0.602);
+    dataGraph->SetFillColor(kWhite);
+    
     Double_t xMin=999999., xMax=0.;
     Double_t yMin=0.0, yMax=0.;
+    
+    ldmGraph->Draw("APL");
+    canvas->Update();
+    xMin = TMath::Min(canvas->GetUxmin(), xMin);
+    xMax = TMath::Max(canvas->GetUxmax(), xMax);
+    yMax = TMath::Max(canvas->GetUymax(), yMax);
     
     modelGraph->Draw("APL");
     canvas->Update();
     xMin = TMath::Min(canvas->GetUxmin(), xMin);
     xMax = TMath::Max(canvas->GetUxmax(), xMax);
-    //yMin = TMath::Min(canvas->GetUymin(), yMin);
     yMax = TMath::Max(canvas->GetUymax(), yMax);
     
     vlumGraph->Draw("APL");
     canvas->Update();
     xMin = TMath::Min(canvas->GetUxmin(), xMin);
     xMax = TMath::Max(canvas->GetUxmax(), xMax);
-    //yMin = TMath::Min(canvas->GetUymin(), yMin);
     yMax = TMath::Max(canvas->GetUymax(), yMax);
     
     dataGraph->Draw("APL");
     canvas->Update();
     xMin = TMath::Min(canvas->GetUxmin(), xMin);
     xMax = TMath::Max(canvas->GetUxmax(), xMax);
-    //yMin = TMath::Min(canvas->GetUymin(), yMin);
     yMax = TMath::Max(canvas->GetUymax(), yMax);
     
     
@@ -358,6 +380,7 @@ int KDFit3(string galaxyLabel, string galaxyDBFilename, string graphfile)
     gStyle->SetOptTitle(0);
     hAxes->Draw();
     
+    ldmGraph->Draw("PL");
     modelGraph->Draw("PL");
     vlumGraph->Draw("PL");
     dataGraph->Draw("zP");
