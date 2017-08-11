@@ -1,0 +1,16 @@
+# Galaxy List::NGC 5533
+
+#These are the individual MW files, using a co-added version
+#currently while code up-grade
+#Label=MilkyWay Bulge=data/MW_XueSofue_Bulge.txt Disc=data/MW_XueSofue_Disk.txt
+ Label=MilkyWay Lum=MW_XueSofue.txt
+
+# velocities co-added already  
+Label=n5533LCM Lum=data/NGC5533/NGC5533_McGaugh_LUM5.txt Data=data/NGC5533/NGC5533_McGaugh_DATA.txt DataError=data/NGC5533/NGC5533_McGaugh_ERROR.txt 
+ 
+ 
+
+#  
+Label=n5533 Bulge=data/NGC5533/NGC5533_McGaugh_BULGE.txt Gas=data/NGC5533/NGC5533_McGaugh_GAS.txt Disc=data/NGC5533/NGC5533_McGaugh_DISK.txt Data=data/NGC5533/NGC5533_McGaugh_DATA.txt DataError=data/NGC5533/NGC5533_McGaugh_ERROR.txt 
+
+ 

@@ -1,0 +1,16 @@
+# Galaxy List:F563-1, need to put directory how to get to this data from wherever the code is running. 
+
+Label=MilkyWay Bulge=data/MW_XueSofue_Bulge.txt Disc=data/MW_XueSofue_Disk.txt
+
+
+
+# 
+Label=f563_1LCM Lum=data/F563-1_Navarro_LUM.txt Data=data/F5631/F563-1_Navarro_DATA.txt DataError=data/F5631/F563-1_Navarro_ERROR.txt
+
+#
+Label=f563_1NFW Gas=data/F563-1_Navarro_GAS.txt Disc=data/F5631/F563-1_Navarro_DISK.txt Data=data/F5631/F563-1_Navarro_DATA.txt DataError=data/F5631/F563-1_Navarro_ERROR.txt
+
+# 
+Label=f563_1bNFW Gas=data/F5631/F563-1_McGaugh_GAS.txt Disc=data/F5631/F563-1_McGaugh_DISK.txt Data=data/F5631/F563-1_McGaugh_DATA.txt DataError=data/F5631/F563-1_McGaugh_ERROR.txt
+
+
